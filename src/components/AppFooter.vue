@@ -40,7 +40,6 @@ import { CONTACT_INFO, NAV_ITEMS, SITE_INFO } from "@/constants/site";
     </div>
     <div class="container footer-bottom">
       <span>© 2026 {{ SITE_INFO.name }} {{ SITE_INFO.englishName }}. All Rights Reserved.</span>
-      <span>展示型官网，不含在线支付与商城交易功能。</span>
     </div>
   </footer>
 </template>

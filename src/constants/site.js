@@ -1,3 +1,13 @@
+import bedroomDoorImage from "@/assets/images/bedroom-door.jpg";
+import craftsmanshipDoorImage from "@/assets/images/craftsmanship-door.jpg";
+import entryDoorImage from "@/assets/images/entry-door.jpg";
+import heroDoorImage from "@/assets/images/hero-door.jpg";
+import partitionDoorImage from "@/assets/images/partition-door.jpg";
+import showroomImage from "@/assets/images/showroom.jpg";
+import slidingDoorImage from "@/assets/images/sliding-door.jpg";
+import storefrontImage from "@/assets/images/storefront.jpg";
+import tracklessDoorImage from "@/assets/images/trackless-door.jpg";
+
 export const SITE_INFO = {
   name: "益嘉门业",
   englishName: "YIJIA DOORS",
@@ -73,16 +83,16 @@ export const PRODUCT_CATEGORIES = [
 ];
 
 export const IMAGE_ASSETS = {
-  hero: "https://lh3.googleusercontent.com/aida-public/AB6AXuDVDs7-Pu9_L66QPkCeA3rkBY8XuwD06kJYIKD0VOYh5kaizwUYOU0XPY14r8pFRSo21wR0TW5OjJtnn19tMN7ECV4JISfEJCu2AtJQYx3TZi0N0QCHzC3CQVPoth7x_4AUynyr3kGL6WORKdF6rfs6ahkU_4_2Rp2RGa1ZAkhdxSy_qxMo6R2yPGyFNKIculNF903kECxIf6jiPyEhowimoCCowMUSGpXx3cicmaynRRfBnyTUU-VWIDnskaNAOtRTFnLfqIzI0JM",
-  bedroom: "https://lh3.googleusercontent.com/aida-public/AB6AXuAhyTzWYlD0N4UzUej_rDyVJWkrdgofX-IZhfRpjYxeErBW_Ztq7PP84NxxTT7hMR3rlwX3xJqn5PEmnth5UYc5WgVLpB2kXBBvrDHITJS5rLM1ls1AsZ6jRA4meQw_aW7N8RQ81EbbqRisw92TsiWLDWd998zDgDzIaq86XJ4ovKRsg_XE1NpRj0-CWZD82gjvz-cjSCPhOId9t9P4kg5tLMrW9cO2biOwArby-zKmZnMMe4iu8as3m8SgwTpV2NW-Uri6RvW8_aI",
-  whiteDoor: "https://lh3.googleusercontent.com/aida-public/AB6AXuB3hfSjyBYHONBBjsq4D_6ryyKO4vSS6wu8dAmjxmbCr8GBWpbZ4mPnT-M6iQBXk92pa7oOYcjXejwiqPN505nvPZDl6erzfxv4k9WpYHROY1kkb7yWGp8qVg3-5aqNIOlblJkHKNMkqGIkgHCcfKDWY4Ofk0r9Qi6accuOidEEJVXPfqLKIw6zO67kHFmnk0GNi6ydPEVj01XDtVIvD-IG7CCrcHBo82UF-Yx_Vmt6-hbpU54WbtsWzX-ldcmfDtszlDSxXHOUw90",
-  sliding: "https://lh3.googleusercontent.com/aida-public/AB6AXuC28dbLS5Fu5tPDy7ImOTpNIwwAade0bFXqtWi9VmJWUT6p1M3G60txa-vIU11Rlhc7kltw9VOOlYEULmO5HUgM-2jetessjttyHyFNk6TTxy-EN7WUJDoF7R2E20wbkeX9ZgFMYlfizeopetIbLa-acQr3tMfGCDLQojbgWvi1nMbdOTHfQ8hPQvXl3IKqwzl6k9AJyTunauQZQA9EHbOaMO_Q_qe-6ZS0nUVIL7xehU1qXlRgXmNzKNzmNOFF599-sVwapt9AjQg",
-  entry: "https://lh3.googleusercontent.com/aida-public/AB6AXuDE8vq3VctL5xDjQ2QffHDxxzPkS9M2SDHRq4z1r0aDNBg13U3WRmGxp1QxEo3xHX8udXyXL7mSK939FVwJbPr0Yuwp7VLtjWc5XM7O0Nfq6p4e7zh2fHb7iSsMpfA8Ds_jynoVPrw5UnCq_MQAuJKDYf-14TP4SDc4ruJricZ-a_LFs53I_sFuXtfRYhrgZtEDloTNIIDF1IdKt1HjqvblOQ7xjcJshNA_i160klTgnCHlYSxuzVPGIGOKXgyCPmNndQBffhGjzRQ",
-  partition: "https://lh3.googleusercontent.com/aida-public/AB6AXuAmApISDlLfytEk8-db9KI_S65XS0cDGoBHHN3rM3LIXjwURrkNgUdvSG1REEZ7jEF1Ep7M8oeyw_vHIoVNIzwkNYn5dpE3yBj_1-4OALRco7fRdcD1s5g2lP7pksXRM-gnaozxemloSi7SM1OVsHftvoW4Sv84anP1739X1cNF7NhLrO6YUhZhX5L8dafnynH0HIL4o3tMMS-DxSWJFQ-fnTtTLJX3iRTgJIIPfSpHxfgbSZBiI5AR2bT7ZfbqWMj5g6Y9e-bb5DQ",
-  trackless: "https://lh3.googleusercontent.com/aida-public/AB6AXuBvqogldzJcEq_gvv0CJH4A2V5RqKABXNZRtMIQk8H8fXMfTN4v7KiC4QXBJmDRDenr7ssksw1RZEICB-O2WXo3B0UdxHdWrRv6zHLVvRtXUPdIGzt8t4Sleibm9zMegt6zGlxpzy8g2FLmI1-kq9sNfTecCKFvigy4XMm7i2HKzT_J2W9GlwRrz6GWBbiRVua1Ati-cVnHNLQ-c5rClemxsqwyGi3f6Dgoieujoq0Rv9p75F4PbN-1y8XYRL5wC6U23CBWPsk8bfI",
-  craftsmanship: "https://lh3.googleusercontent.com/aida-public/AB6AXuBkhqEMxK-bANKe3Yc_La6fyjxvmtZPzvQYeI-N6InzrEl0C-qHNH_ANJR2cH9TBxMGzSlDvmr-FuKtiyrryCZze4GX5O6AMkDxsUHhL7Hf_iNKX5j5XZGl6dkrtYNpKOhidEHNib2-SHHPBpSJVoCy-p01mXgoyIfx_Me7a4IGvQ98fglVqtMN-bC_nt-hRDdWXWpVkrJ-sP9XC-8Cg_Gc3oWQ0cIgv_fINh2MmHRVr0xfcfbiTmTIU1VIKqGfQITw876TCL20W6c",
-  showroom: "https://lh3.googleusercontent.com/aida-public/AB6AXuCGTywqyW465HsAHDYYicaHZqU0PGXmBuTFVy0eazzXLC8MgKl8u-6oJ1Re7ZHJVlYJUpC2a5J9_dQgNrG5l9KK0ku0qfEoS5aUMxE1UojmW60w357entKc-orRY4N1Lu21-G79PofT2pFC6l2GamKd4LIWr6XXtasDsoiBHsAMQee1kIJV_zFS588iVq_jphQEk4irSX_um-GJIMcj4wExyHzYMZZRxPF3W8aUilFJHHn5WYCiIMbChc5Y6YQT4mRZJll3kwPgtRk",
-  store: "https://lh3.googleusercontent.com/aida-public/AB6AXuBwe5xycIZ7Ad3LRQS3bI2baYyCLBqBYU7hMdX05cDyP_hvnO9DUB-Qn7inmAZHETBmXsZHNB0rJBAj4LsHgAa672oy-Tp7JOZ525muVOI7lcWu0SaTUgH4hEgWK2WbASKyQSz0-We0oEX64t_cspZiAjCOVa6bDu6c-n11uraWNNxdT6BN-fAECW-QRwg-OXysjScLjFmBlkwYfQSGgY40OqeDpHpdBWoUwq9WMNVWJWu8MTGQ9i3ujHO1flTqJVt3PKyLLiwXlnw"
+  hero: heroDoorImage,
+  bedroom: bedroomDoorImage,
+  whiteDoor: bedroomDoorImage,
+  sliding: slidingDoorImage,
+  entry: entryDoorImage,
+  partition: partitionDoorImage,
+  trackless: tracklessDoorImage,
+  craftsmanship: craftsmanshipDoorImage,
+  showroom: showroomImage,
+  store: storefrontImage
 };
 
 export const PRODUCTS = [

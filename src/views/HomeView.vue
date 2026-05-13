@@ -1,8 +1,7 @@
 <script setup>
-import { ArrowRight, CheckCircle2 } from "lucide-vue-next";
+import { ref } from "vue";
+import { ArrowRight, CheckCircle2, ChevronLeft, ChevronRight } from "lucide-vue-next";
 import ContactBlock from "@/components/ContactBlock.vue";
-import ProductCard from "@/components/ProductCard.vue";
-import SectionHeading from "@/components/SectionHeading.vue";
 import {
   BRAND_ADVANTAGES,
   FEATURED_PRODUCT_IDS,
@@ -12,21 +11,48 @@ import {
   SITE_INFO
 } from "@/constants/site";
 
-const categoryShowcase = PRODUCT_CATEGORIES.filter((category) =>
-  ["bedroom-door", "sliding-door", "entry-door"].includes(category.id)
-).map((category) => ({
-  ...category,
-  image:
-    category.id === "bedroom-door"
-      ? IMAGE_ASSETS.whiteDoor
-      : category.id === "sliding-door"
-        ? IMAGE_ASSETS.sliding
-        : IMAGE_ASSETS.entry
+const featuredRail = ref(null);
+
+const categoryShowcase = [
+  {
+    id: "entry-door",
+    title: "实木门",
+    image: IMAGE_ASSETS.entry
+  },
+  {
+    id: "bathroom-door",
+    title: "卫生间门",
+    image: IMAGE_ASSETS.partition
+  },
+  {
+    id: "bedroom-door",
+    title: "房门",
+    image: IMAGE_ASSETS.whiteDoor
+  },
+  {
+    id: "sliding-door",
+    title: "推拉门",
+    image: IMAGE_ASSETS.sliding
+  }
+].map((item) => ({
+  ...PRODUCT_CATEGORIES.find((category) => category.id === item.id),
+  ...item
 }));
 
 const featuredProducts = FEATURED_PRODUCT_IDS.map((id) =>
   PRODUCTS.find((product) => product.id === id)
 ).filter(Boolean);
+
+const scrollFeatured = (direction) => {
+  const rail = featuredRail.value;
+
+  if (!rail) return;
+
+  rail.scrollBy({
+    left: direction * Math.round(rail.clientWidth * 0.82),
+    behavior: "smooth"
+  });
+};
 </script>
 
 <template>
@@ -50,13 +76,11 @@ const featuredProducts = FEATURED_PRODUCT_IDS.map((id) =>
       </div>
     </section>
 
-    <section class="page-section">
+    <section class="page-section home-showcase-section">
       <div class="container">
-        <SectionHeading
-          eyebrow="Categories"
-          title="从空间出发选择门"
-          description="先按使用空间和门型结构浏览，后续可以继续扩展更多细分类目。"
-        />
+        <div class="home-section-head">
+          <h2>产品分类</h2>
+        </div>
 
         <div class="category-showcase">
           <RouterLink
@@ -66,14 +90,45 @@ const featuredProducts = FEATURED_PRODUCT_IDS.map((id) =>
             :to="`/products?category=${category.id}`"
           >
             <span class="category-image">
-              <img :src="category.image" :alt="category.name" loading="lazy" />
+              <img :src="category.image" :alt="category.title" loading="lazy" />
             </span>
             <span class="category-card-footer">
-              <span>
-                <strong>{{ category.name }}</strong>
-                <small>{{ category.description }}</small>
-              </span>
+              <strong>{{ category.title }}</strong>
               <ArrowRight :size="20" aria-hidden="true" />
+            </span>
+          </RouterLink>
+        </div>
+      </div>
+    </section>
+
+    <section class="page-section home-showcase-section home-showcase-section--featured">
+      <div class="container">
+        <div class="home-section-head home-section-head--row">
+          <h2>明星产品</h2>
+          <div class="featured-controls" aria-label="明星产品切换">
+            <span>左右滑动查看</span>
+            <button class="rail-control" type="button" aria-label="查看上一组明星产品" @click="scrollFeatured(-1)">
+              <ChevronLeft :size="18" aria-hidden="true" />
+            </button>
+            <button class="rail-control" type="button" aria-label="查看下一组明星产品" @click="scrollFeatured(1)">
+              <ChevronRight :size="18" aria-hidden="true" />
+            </button>
+          </div>
+        </div>
+
+        <div ref="featuredRail" class="featured-rail" aria-label="明星产品">
+          <RouterLink
+            v-for="product in featuredProducts"
+            :key="product.id"
+            class="star-product-card"
+            :to="`/products/${product.id}`"
+          >
+            <span class="star-product-media">
+              <img :src="product.images[0]" :alt="product.name" loading="lazy" />
+            </span>
+            <span class="star-product-info">
+              <strong>{{ product.name }}</strong>
+              <small>{{ product.categoryLabel }} · {{ product.tags.slice(0, 2).join(" · ") }}</small>
             </span>
           </RouterLink>
         </div>
@@ -104,31 +159,6 @@ const featuredProducts = FEATURED_PRODUCT_IDS.map((id) =>
         </div>
         <div class="image-panel">
           <img :src="IMAGE_ASSETS.craftsmanship" alt="工匠检查高品质木门饰面" loading="lazy" />
-        </div>
-      </div>
-    </section>
-
-    <section class="page-section">
-      <div class="container">
-        <div class="section-row">
-          <SectionHeading
-            eyebrow="Selections"
-            title="精选系列"
-            description="用真实图片和清晰描述，帮助客户快速判断是否适合自己的空间。"
-          />
-          <RouterLink class="text-link section-more" to="/products">
-            浏览全部
-            <ArrowRight :size="16" aria-hidden="true" />
-          </RouterLink>
-        </div>
-
-        <div class="featured-grid">
-          <ProductCard
-            v-for="product in featuredProducts"
-            :key="product.id"
-            :product="product"
-            horizontal
-          />
         </div>
       </div>
     </section>

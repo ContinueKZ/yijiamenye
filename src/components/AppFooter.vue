@@ -1,5 +1,6 @@
 <script setup>
-import { MapPin, MessageCircle, Phone } from "lucide-vue-next";
+import { MapPin, Phone } from "lucide-vue-next";
+import WechatIcon from "@/components/WechatIcon.vue";
 import { CONTACT_INFO, NAV_ITEMS, SITE_INFO } from "@/constants/site";
 </script>
 
@@ -28,7 +29,8 @@ import { CONTACT_INFO, NAV_ITEMS, SITE_INFO } from "@/constants/site";
             <span>{{ CONTACT_INFO.phone }}</span>
           </li>
           <li>
-            <MessageCircle :size="16" aria-hidden="true" />
+            <WechatIcon :size="16" />
+            <span class="footer-contact-label">微信</span>
             <span>{{ CONTACT_INFO.wechat }}</span>
           </li>
           <li>

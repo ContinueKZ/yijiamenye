@@ -1,6 +1,7 @@
 <script setup>
-import { Clock, MapPin, MessageCircle, Navigation, Phone } from "lucide-vue-next";
+import { Clock, MapPin, Navigation, Phone } from "lucide-vue-next";
 import ContactBlock from "@/components/ContactBlock.vue";
+import WechatIcon from "@/components/WechatIcon.vue";
 import { CONTACT_INFO, IMAGE_ASSETS } from "@/constants/site";
 </script>
 
@@ -41,7 +42,7 @@ import { CONTACT_INFO, IMAGE_ASSETS } from "@/constants/site";
 
       <div class="wechat-panel">
         <div>
-          <MessageCircle :size="28" aria-hidden="true" />
+          <WechatIcon :size="28" />
           <h2>微信咨询</h2>
           <p>微信号：{{ CONTACT_INFO.wechat }}</p>
         </div>
@@ -58,10 +59,25 @@ import { CONTACT_INFO, IMAGE_ASSETS } from "@/constants/site";
     </section>
 
     <section id="map" class="map-section">
-      <div class="map-placeholder">
-        <MapPin :size="46" aria-hidden="true" />
-        <strong>益嘉门业展厅</strong>
-        <span>{{ CONTACT_INFO.address }}</span>
+      <div class="map-canvas" aria-label="益嘉门业展厅位置示意图">
+        <img class="map-image" :src="IMAGE_ASSETS.contactMap" alt="" aria-hidden="true" />
+      </div>
+      <div class="map-summary">
+        <div>
+          <p class="eyebrow">Location</p>
+          <h2>益嘉门业展厅</h2>
+          <p>{{ CONTACT_INFO.address }}</p>
+        </div>
+        <div>
+          <a :href="CONTACT_INFO.phoneHref">
+            <Phone :size="16" aria-hidden="true" />
+            {{ CONTACT_INFO.phone }}
+          </a>
+          <span>
+            <Clock :size="16" aria-hidden="true" />
+            {{ CONTACT_INFO.businessHours }}
+          </span>
+        </div>
       </div>
     </section>
 

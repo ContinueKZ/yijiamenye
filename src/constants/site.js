@@ -1,5 +1,6 @@
 import bedroomDoorImage from "@/assets/images/bedroom-door.jpg";
 import craftsmanshipDoorImage from "@/assets/images/craftsmanship-door.jpg";
+import contactMapImage from "@/assets/images/contact-map.png";
 import entryDoorImage from "@/assets/images/entry-door.jpg";
 import heroDoorImage from "@/assets/images/hero-door.jpg";
 import partitionDoorImage from "@/assets/images/partition-door.jpg";
@@ -7,6 +8,12 @@ import showroomImage from "@/assets/images/showroom.jpg";
 import slidingDoorImage from "@/assets/images/sliding-door.jpg";
 import storefrontImage from "@/assets/images/storefront.jpg";
 import tracklessDoorImage from "@/assets/images/trackless-door.jpg";
+import trendBlackGlassSlidingDoorImage from "@/assets/images/trend-black-glass-sliding-door.png";
+import trendFlutedGlassBathroomDoorImage from "@/assets/images/trend-fluted-glass-bathroom-door.png";
+import trendHiddenFlushDoorImage from "@/assets/images/trend-hidden-flush-door.png";
+import trendOakBedroomDoorImage from "@/assets/images/trend-oak-bedroom-door.png";
+import trendSmartEntryDoorImage from "@/assets/images/trend-smart-entry-door.png";
+import trendWarmWhiteDoorImage from "@/assets/images/trend-warm-white-door.png";
 
 export const SITE_INFO = {
   name: "益嘉门业",
@@ -18,11 +25,11 @@ export const SITE_INFO = {
 };
 
 export const CONTACT_INFO = {
-  phone: "+86 400-XXX-XXXX",
-  phoneHref: "tel:+86400XXXXXXX",
-  wechat: "YIJIA_DOORS_OFFICIAL",
-  address: "佛山市顺德区XX产业园一期",
-  businessHours: "周一至周日 09:00 - 18:30"
+  phone: "13387981151 / 13387988068",
+  phoneHref: "tel:13387981151",
+  wechat: "13387988068",
+  address: "景德镇市乐平市大连路7号",
+  businessHours: "周一至周日 08:00 - 21:00"
 };
 
 export const NAV_ITEMS = [
@@ -43,6 +50,12 @@ export const PRODUCT_CATEGORIES = [
     name: "房门 / 卧室门",
     shortName: "房门",
     description: "适用于卧室、书房等室内空间，注重静音、质感与耐看度。"
+  },
+  {
+    id: "hidden-door",
+    name: "隐形门 / 门墙柜一体",
+    shortName: "隐形门",
+    description: "强调墙面整体感与空间秩序，适合极简、整装和高定家居场景。"
   },
   {
     id: "bathroom-door",
@@ -90,12 +103,115 @@ export const IMAGE_ASSETS = {
   entry: entryDoorImage,
   partition: partitionDoorImage,
   trackless: tracklessDoorImage,
+  contactMap: contactMapImage,
   craftsmanship: craftsmanshipDoorImage,
   showroom: showroomImage,
-  store: storefrontImage
+  store: storefrontImage,
+  trendOakBedroom: trendOakBedroomDoorImage,
+  trendWarmWhite: trendWarmWhiteDoorImage,
+  trendBlackGlassSliding: trendBlackGlassSlidingDoorImage,
+  trendFlutedBathroom: trendFlutedGlassBathroomDoorImage,
+  trendHiddenFlush: trendHiddenFlushDoorImage,
+  trendSmartEntry: trendSmartEntryDoorImage
 };
 
 export const PRODUCTS = [
+  {
+    id: "trend-oak-minimal-bedroom-door",
+    name: "原木极简平板门",
+    categoryIds: ["bedroom-door"],
+    categoryLabel: "房门 / 卧室门",
+    images: [IMAGE_ASSETS.trendOakBedroom, IMAGE_ASSETS.bedroom, IMAGE_ASSETS.craftsmanship],
+    summary: "自然木色、平板造型和黑色细把手，是当下年轻家庭偏爱的耐看型卧室门。",
+    description:
+      "顺应原木风、现代简约和整屋统一的装修趋势，以清爽木纹弱化装饰感，适合卧室、书房和儿童房等日常高频空间。",
+    specs: [
+      { label: "适用空间", value: "卧室 / 书房 / 儿童房" },
+      { label: "流行方向", value: "原木风 / 现代极简 / 全屋统一" },
+      { label: "功能特点", value: "耐看百搭 / 视觉温润 / 可搭静音结构" }
+    ],
+    tags: ["原木", "极简", "平板", "卧室"]
+  },
+  {
+    id: "trend-warm-white-silent-door",
+    name: "奶油白静音门",
+    categoryIds: ["bedroom-door"],
+    categoryLabel: "房门 / 卧室门",
+    images: [IMAGE_ASSETS.trendWarmWhite, IMAGE_ASSETS.whiteDoor, IMAGE_ASSETS.craftsmanship],
+    summary: "暖白饰面搭配轻法式线条，适合奶油风、现代轻奢和明亮型家装。",
+    description:
+      "暖白门款近年在家装中接受度高，能让空间更明亮柔和；搭配金属把手和细腻线条，兼顾质感与日常耐看。",
+    specs: [
+      { label: "适用空间", value: "卧室 / 客房 / 书房" },
+      { label: "流行方向", value: "奶油风 / 轻法式 / 现代轻奢" },
+      { label: "功能特点", value: "明亮柔和 / 易搭配 / 可做静音升级" }
+    ],
+    tags: ["奶油白", "静音", "轻法式", "百搭"]
+  },
+  {
+    id: "trend-black-slim-glass-sliding-door",
+    name: "黑框极窄玻璃推拉门",
+    categoryIds: ["kitchen-door", "sliding-door"],
+    categoryLabel: "厨房门 / 推拉门",
+    images: [IMAGE_ASSETS.trendBlackGlassSliding, IMAGE_ASSETS.sliding, IMAGE_ASSETS.partition],
+    summary: "黑色极窄边框和通透玻璃，是厨房、餐厅隔断里很受欢迎的现代款式。",
+    description:
+      "玻璃推拉门兼顾采光和油烟隔离，黑色窄边框视觉利落，适合开放式厨房、餐厨连接和小户型空间。",
+    specs: [
+      { label: "适用空间", value: "厨房 / 餐厅 / 阳台隔断" },
+      { label: "流行方向", value: "极窄边框 / 黑框玻璃 / 通透隔断" },
+      { label: "功能特点", value: "采光好 / 隔油烟 / 节省空间" }
+    ],
+    tags: ["黑框", "玻璃", "推拉", "厨房"]
+  },
+  {
+    id: "trend-changhong-glass-bathroom-door",
+    name: "长虹玻璃卫浴门",
+    categoryIds: ["bathroom-door", "partition-door"],
+    categoryLabel: "卫生间门 / 隔断门",
+    images: [IMAGE_ASSETS.trendFlutedBathroom, IMAGE_ASSETS.partition, IMAGE_ASSETS.trackless],
+    summary: "竖纹长虹玻璃既保留采光，又兼顾私密感，是卫浴和干湿分离的热门选择。",
+    description:
+      "长虹玻璃利用竖向纹理弱化视线穿透，让小空间更通透。香槟或暖灰边框能提升质感，适合卫生间、干区和玄关隔断。",
+    specs: [
+      { label: "适用空间", value: "卫生间 / 干湿分离 / 玄关" },
+      { label: "流行方向", value: "长虹玻璃 / 透光不透影 / 轻奢金属" },
+      { label: "功能特点", value: "防潮耐用 / 保留采光 / 私密友好" }
+    ],
+    tags: ["长虹玻璃", "卫浴", "防潮", "透光"]
+  },
+  {
+    id: "trend-hidden-flush-wall-door",
+    name: "门墙一体隐形门",
+    categoryIds: ["hidden-door", "bedroom-door"],
+    categoryLabel: "隐形门 / 门墙柜一体",
+    images: [IMAGE_ASSETS.trendHiddenFlush, IMAGE_ASSETS.craftsmanship, IMAGE_ASSETS.showroom],
+    summary: "让门和墙面融为一体，适合追求极简、整装和空间完整感的家庭。",
+    description:
+      "隐形门和门墙柜一体化是高定整装里的热门方向，能够弱化门洞存在感，保持背景墙、走廊和客厅立面的完整统一。",
+    specs: [
+      { label: "适用空间", value: "客厅背景墙 / 走廊 / 主卧套间" },
+      { label: "流行方向", value: "隐形门 / 门墙柜一体 / 高定整装" },
+      { label: "功能特点", value: "整体感强 / 极简立面 / 可定制饰面" }
+    ],
+    tags: ["隐形门", "门墙一体", "极简", "高定"]
+  },
+  {
+    id: "trend-smart-armored-entry-door",
+    name: "智能装甲入户门",
+    categoryIds: ["entry-door"],
+    categoryLabel: "入户门 / 安全门",
+    images: [IMAGE_ASSETS.trendSmartEntry, IMAGE_ASSETS.entry, IMAGE_ASSETS.showroom],
+    summary: "装甲门体搭配智能锁，兼顾安全感、入户质感和现代家庭的便利需求。",
+    description:
+      "智能锁、稳定门体和深色金属质感是改善型住宅入户门的常见选择，适合重视安全、防护和第一眼质感的家庭。",
+    specs: [
+      { label: "适用空间", value: "住宅入户 / 改善型装修 / 别墅入户" },
+      { label: "流行方向", value: "智能锁 / 装甲安全 / 深色金属质感" },
+      { label: "功能特点", value: "安全防护 / 指纹密码 / 质感入户" }
+    ],
+    tags: ["智能", "装甲", "入户", "安全"]
+  },
   {
     id: "modern-bedroom-door",
     name: "现代极简实木门",
@@ -195,10 +311,12 @@ export const PRODUCTS = [
 ];
 
 export const FEATURED_PRODUCT_IDS = [
-  "modern-bedroom-door",
-  "phantom-black-sliding-door",
-  "trackless-minimal-sliding-door",
-  "armored-entry-door"
+  "trend-oak-minimal-bedroom-door",
+  "trend-black-slim-glass-sliding-door",
+  "trend-changhong-glass-bathroom-door",
+  "trend-hidden-flush-wall-door",
+  "trend-smart-armored-entry-door",
+  "trend-warm-white-silent-door"
 ];
 
 export const BRAND_ADVANTAGES = [

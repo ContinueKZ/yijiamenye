@@ -26,7 +26,14 @@ import { CONTACT_INFO, NAV_ITEMS, SITE_INFO } from "@/constants/site";
         <ul class="footer-contact">
           <li>
             <Phone :size="16" aria-hidden="true" />
-            <span>{{ CONTACT_INFO.phone }}</span>
+            <span class="footer-phone-links">
+              <template v-for="(phone, index) in CONTACT_INFO.phones" :key="phone.href">
+                <a :href="phone.href">
+                  {{ phone.label }}
+                </a>
+                <span v-if="index < CONTACT_INFO.phones.length - 1">/</span>
+              </template>
+            </span>
           </li>
           <li>
             <WechatIcon :size="16" />

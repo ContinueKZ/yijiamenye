@@ -2,6 +2,7 @@
 import { ref, watch } from "vue";
 import { RouterLink, useRoute } from "vue-router";
 import { Menu, Phone, X } from "lucide-vue-next";
+import LogoMark from "@/components/LogoMark.vue";
 import { CONTACT_INFO, NAV_ITEMS, SITE_INFO } from "@/constants/site";
 
 const route = useRoute();
@@ -19,7 +20,7 @@ watch(
   <header class="site-header">
     <div class="container header-inner">
       <RouterLink class="brand" to="/" :aria-label="`${SITE_INFO.name}首页`">
-        <span class="brand-mark">益</span>
+        <span class="brand-mark"><LogoMark /></span>
         <span>
           <strong>{{ SITE_INFO.name }}</strong>
           <small>{{ SITE_INFO.englishName }}</small>

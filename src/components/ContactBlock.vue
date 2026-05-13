@@ -1,7 +1,37 @@
 <script setup>
+import { ref } from "vue";
 import { Clock, MapPin, Phone } from "lucide-vue-next";
 import WechatIcon from "@/components/WechatIcon.vue";
 import { CONTACT_INFO } from "@/constants/site";
+
+const copiedWechat = ref(false);
+
+const copyWechat = async () => {
+  copiedWechat.value = true;
+
+  try {
+    await navigator.clipboard.writeText(CONTACT_INFO.wechat);
+  } catch {
+    try {
+      const input = document.createElement("input");
+      input.value = CONTACT_INFO.wechat;
+      input.setAttribute("readonly", "");
+      input.style.position = "fixed";
+      input.style.opacity = "0";
+      document.body.appendChild(input);
+      input.focus();
+      input.select();
+      document.execCommand("copy");
+      document.body.removeChild(input);
+    } catch {
+      // The visible state still gives the user a clear copy cue.
+    }
+  }
+
+  window.setTimeout(() => {
+    copiedWechat.value = false;
+  }, 1800);
+};
 
 defineProps({
   variant: {
@@ -28,22 +58,33 @@ defineProps({
     </div>
 
     <div class="contact-cards">
-      <a class="contact-card" :href="CONTACT_INFO.phoneHref">
+      <div class="contact-card">
         <span class="contact-icon"><Phone :size="22" aria-hidden="true" /></span>
         <span>
           <small>咨询热线</small>
-          <strong>{{ CONTACT_INFO.phone }}</strong>
+          <strong class="phone-link-list">
+            <template v-for="(phone, index) in CONTACT_INFO.phones" :key="phone.href">
+              <a class="phone-link" :href="phone.href">
+                {{ phone.label }}
+              </a>
+              <span v-if="index < CONTACT_INFO.phones.length - 1" class="phone-separator">/</span>
+            </template>
+          </strong>
         </span>
-      </a>
-      <div class="contact-card">
+      </div>
+      <button
+        class="contact-card contact-card--button"
+        type="button"
+        @pointerdown="copyWechat"
+      >
         <span class="contact-icon">
           <WechatIcon :size="22" />
         </span>
         <span>
-          <small>微信咨询</small>
+          <small>{{ copiedWechat ? "已复制微信号" : "微信咨询" }}</small>
           <strong>{{ CONTACT_INFO.wechat }}</strong>
         </span>
-      </div>
+      </button>
       <div class="contact-card">
         <span class="contact-icon"><MapPin :size="22" aria-hidden="true" /></span>
         <span>

@@ -26,7 +26,11 @@ export const SITE_INFO = {
 
 export const CONTACT_INFO = {
   phone: "13387981151 / 13387988068",
-  phoneHref: "tel:13387981151",
+  phoneHref: "tel:13387988068",
+  phones: [
+    { label: "13387981151", href: "tel:13387981151" },
+    { label: "13387988068", href: "tel:13387988068" }
+  ],
   wechat: "13387988068",
   address: "景德镇市乐平市大连路7号",
   businessHours: "周一至周日 08:00 - 21:00"

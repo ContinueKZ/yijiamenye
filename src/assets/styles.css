@@ -210,8 +210,11 @@ img {
   place-items: center;
   background: var(--color-primary);
   color: #fff;
-  font-size: 18px;
-  font-weight: 800;
+}
+
+.brand-mark svg {
+  width: 26px;
+  height: 26px;
 }
 
 .brand strong,
@@ -815,7 +818,18 @@ img {
   gap: var(--space-md);
   border: 1px solid rgba(255, 255, 255, 0.16);
   background: rgba(255, 255, 255, 0.08);
+  color: inherit;
   padding: var(--space-md);
+  text-align: left;
+}
+
+.contact-card--button {
+  width: 100%;
+}
+
+.contact-card--button:hover,
+.phone-link:hover {
+  border-color: rgba(214, 178, 126, 0.58);
 }
 
 .contact-icon {
@@ -843,6 +857,24 @@ img {
   font-size: 16px;
   line-height: 1.35;
   overflow-wrap: anywhere;
+}
+
+.phone-link-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  align-items: baseline;
+}
+
+.phone-link {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+}
+
+.phone-separator {
+  color: rgba(255, 255, 255, 0.62);
 }
 
 .subpage-hero {
@@ -1186,11 +1218,26 @@ img {
   overflow-wrap: anywhere;
 }
 
+.contact-phone-list {
+  display: grid;
+  justify-items: start;
+  gap: 8px;
+}
+
 .wechat-panel {
   display: grid;
   align-content: center;
   justify-items: center;
   text-align: center;
+}
+
+.wechat-panel--button {
+  width: 100%;
+  color: inherit;
+}
+
+.wechat-panel--button:hover {
+  border-color: rgba(124, 95, 56, 0.42);
 }
 
 .qr-placeholder {
@@ -1362,6 +1409,18 @@ img {
 .footer-contact-label {
   color: var(--color-primary);
   font-weight: 700;
+}
+
+.footer-phone-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 10px;
+}
+
+.footer-phone-links a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
 
 .footer-bottom {

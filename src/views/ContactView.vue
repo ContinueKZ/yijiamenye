@@ -1,8 +1,38 @@
 <script setup>
+import { ref } from "vue";
 import { Clock, MapPin, Navigation, Phone } from "lucide-vue-next";
 import ContactBlock from "@/components/ContactBlock.vue";
 import WechatIcon from "@/components/WechatIcon.vue";
 import { CONTACT_INFO, IMAGE_ASSETS } from "@/constants/site";
+
+const copiedWechat = ref(false);
+
+const copyWechat = async () => {
+  copiedWechat.value = true;
+
+  try {
+    await navigator.clipboard.writeText(CONTACT_INFO.wechat);
+  } catch {
+    try {
+      const input = document.createElement("input");
+      input.value = CONTACT_INFO.wechat;
+      input.setAttribute("readonly", "");
+      input.style.position = "fixed";
+      input.style.opacity = "0";
+      document.body.appendChild(input);
+      input.focus();
+      input.select();
+      document.execCommand("copy");
+      document.body.removeChild(input);
+    } catch {
+      // The visible state still gives the user a clear copy cue.
+    }
+  }
+
+  window.setTimeout(() => {
+    copiedWechat.value = false;
+  }, 1800);
+};
 </script>
 
 <template>
@@ -34,23 +64,30 @@ import { CONTACT_INFO, IMAGE_ASSETS } from "@/constants/site";
         <article>
           <Phone :size="26" aria-hidden="true" />
           <h2>咨询热线</h2>
-          <a class="contact-phone" :href="CONTACT_INFO.phoneHref">
-            {{ CONTACT_INFO.phone }}
-          </a>
+          <div class="contact-phone-list">
+            <a
+              v-for="phone in CONTACT_INFO.phones"
+              :key="phone.href"
+              class="contact-phone"
+              :href="phone.href"
+            >
+              {{ phone.label }}
+            </a>
+          </div>
         </article>
       </div>
 
-      <div class="wechat-panel">
+      <button class="wechat-panel wechat-panel--button" type="button" @pointerdown="copyWechat">
         <div>
           <WechatIcon :size="28" />
           <h2>微信咨询</h2>
-          <p>微信号：{{ CONTACT_INFO.wechat }}</p>
+          <p>{{ copiedWechat ? "微信号已复制" : `微信号：${CONTACT_INFO.wechat}` }}</p>
         </div>
         <div class="qr-placeholder" aria-label="微信二维码占位">
           <span>QR</span>
         </div>
-        <small>后续替换为真实微信二维码图片。</small>
-      </div>
+        <small>点击复制微信号，打开微信添加好友。</small>
+      </button>
 
       <div class="showroom-panel">
         <img :src="IMAGE_ASSETS.showroom" alt="益嘉门业展厅实景" />
@@ -69,9 +106,9 @@ import { CONTACT_INFO, IMAGE_ASSETS } from "@/constants/site";
           <p>{{ CONTACT_INFO.address }}</p>
         </div>
         <div>
-          <a :href="CONTACT_INFO.phoneHref">
+          <a v-for="phone in CONTACT_INFO.phones" :key="phone.href" :href="phone.href">
             <Phone :size="16" aria-hidden="true" />
-            {{ CONTACT_INFO.phone }}
+            {{ phone.label }}
           </a>
           <span>
             <Clock :size="16" aria-hidden="true" />

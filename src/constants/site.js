@@ -16,6 +16,7 @@ import trendHiddenFlushDoorImage from "@/assets/images/trend-hidden-flush-door.p
 import trendOakBedroomDoorImage from "@/assets/images/trend-oak-bedroom-door.png";
 import trendSmartEntryDoorImage from "@/assets/images/trend-smart-entry-door.png";
 import trendWarmWhiteDoorImage from "@/assets/images/trend-warm-white-door.png";
+import wechatQrImage from "@/assets/images/wechat-qr.jpg";
 
 export const SITE_INFO = {
   name: "益嘉门业",
@@ -120,7 +121,8 @@ export const IMAGE_ASSETS = {
   trendHiddenFlush: trendHiddenFlushDoorImage,
   trendSmartEntry: trendSmartEntryDoorImage,
   bossPortrait: bossPortraitImage,
-  bossLadyPortrait: bossLadyPortraitImage
+  bossLadyPortrait: bossLadyPortraitImage,
+  wechatQr: wechatQrImage
 };
 
 export const OWNER_PROFILES = [

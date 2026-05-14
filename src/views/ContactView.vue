@@ -84,8 +84,8 @@ const copyWechat = async () => {
           <h2>微信咨询</h2>
           <p>{{ copiedWechat ? "微信号已复制" : `微信号：${CONTACT_INFO.wechat}` }}</p>
         </div>
-        <div class="qr-placeholder" aria-label="微信二维码占位">
-          <span>QR</span>
+        <div class="qr-placeholder" aria-label="益嘉门业微信二维码">
+          <img :src="IMAGE_ASSETS.wechatQr" alt="益嘉门业微信二维码" loading="lazy" />
         </div>
         <small>点击复制微信号，打开微信添加好友。</small>
       </button>

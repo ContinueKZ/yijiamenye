@@ -1158,6 +1158,105 @@ img {
   color: var(--color-primary);
 }
 
+.owner-section {
+  padding: var(--space-2xl) 0;
+  background: var(--color-background);
+}
+
+.owner-section--compact {
+  padding-top: 0;
+}
+
+.owner-heading {
+  max-width: 640px;
+  margin-bottom: var(--space-xl);
+}
+
+.owner-heading h2 {
+  margin: 0;
+  font-size: clamp(30px, 5vw, 44px);
+  line-height: 1.16;
+}
+
+.owner-heading p:not(.eyebrow) {
+  margin: var(--space-md) 0 0;
+  color: var(--color-text-soft);
+  line-height: 1.8;
+}
+
+.owner-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-lg);
+}
+
+.owner-card {
+  display: grid;
+  grid-template-columns: minmax(170px, 0.74fr) minmax(0, 1fr);
+  align-items: stretch;
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+}
+
+.owner-photo {
+  min-height: 320px;
+  background: var(--color-surface-warm);
+}
+
+.owner-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+
+.owner-copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: var(--space-lg);
+}
+
+.owner-copy > span {
+  color: var(--color-accent-dark);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.owner-copy h3 {
+  margin: var(--space-sm) 0 0;
+  font-size: 26px;
+  line-height: 1.24;
+}
+
+.owner-copy p {
+  margin: var(--space-md) 0 var(--space-lg);
+  color: var(--color-text-soft);
+  line-height: 1.8;
+}
+
+.owner-phone {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  width: fit-content;
+  min-height: 42px;
+  border-bottom: 1px solid currentColor;
+  color: var(--color-primary);
+  font-weight: 800;
+  transition:
+    color var(--transition-base),
+    gap var(--transition-base);
+}
+
+.owner-phone:hover {
+  gap: 14px;
+  color: var(--color-accent-dark);
+}
+
 .testimonial-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -1455,6 +1554,7 @@ img {
   .product-grid,
   .advantage-grid,
   .detail-points,
+  .owner-grid,
   .testimonial-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -1477,6 +1577,15 @@ img {
 
   .product-card--horizontal {
     grid-template-columns: 1fr;
+  }
+
+  .owner-card {
+    grid-template-columns: 1fr;
+  }
+
+  .owner-photo {
+    min-height: auto;
+    aspect-ratio: 4 / 5;
   }
 
   .section-row {
@@ -1523,6 +1632,7 @@ img {
   .product-grid,
   .advantage-grid,
   .detail-points,
+  .owner-grid,
   .testimonial-grid,
   .contact-cards {
     grid-template-columns: 1fr;
@@ -1532,9 +1642,26 @@ img {
   .split-section,
   .subpage-hero,
   .about-hero,
+  .owner-section,
   .contact-page {
     padding-top: var(--space-xl);
     padding-bottom: var(--space-xl);
+  }
+
+  .owner-section--compact {
+    padding-top: 0;
+  }
+
+  .owner-heading {
+    margin-bottom: var(--space-lg);
+  }
+
+  .owner-copy {
+    padding: var(--space-md);
+  }
+
+  .owner-copy h3 {
+    font-size: 22px;
   }
 
   .contact-block,

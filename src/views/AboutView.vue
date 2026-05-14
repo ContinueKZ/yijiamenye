@@ -1,6 +1,7 @@
 <script setup>
 import { CheckCircle2 } from "lucide-vue-next";
 import ContactBlock from "@/components/ContactBlock.vue";
+import OwnerProfiles from "@/components/OwnerProfiles.vue";
 import SectionHeading from "@/components/SectionHeading.vue";
 import { BRAND_ADVANTAGES, IMAGE_ASSETS, SITE_INFO } from "@/constants/site";
 </script>
@@ -46,6 +47,8 @@ import { BRAND_ADVANTAGES, IMAGE_ASSETS, SITE_INFO } from "@/constants/site";
         </div>
       </div>
     </section>
+
+    <OwnerProfiles />
 
     <section class="split-section split-section--surface">
       <div class="container split-grid split-grid--reverse">

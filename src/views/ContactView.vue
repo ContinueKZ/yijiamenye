@@ -2,6 +2,7 @@
 import { ref } from "vue";
 import { Clock, MapPin, Navigation, Phone } from "lucide-vue-next";
 import ContactBlock from "@/components/ContactBlock.vue";
+import OwnerProfiles from "@/components/OwnerProfiles.vue";
 import WechatIcon from "@/components/WechatIcon.vue";
 import { CONTACT_INFO, IMAGE_ASSETS } from "@/constants/site";
 
@@ -94,6 +95,8 @@ const copyWechat = async () => {
         <p>实地展厅，材质、颜色、五金和开合手感都可以现场确认。</p>
       </div>
     </section>
+
+    <OwnerProfiles compact />
 
     <section id="map" class="map-section">
       <div class="map-canvas" aria-label="益嘉门业展厅位置示意图">

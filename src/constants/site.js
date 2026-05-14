@@ -1,4 +1,6 @@
 import bedroomDoorImage from "@/assets/images/bedroom-door.jpg";
+import bossLadyPortraitImage from "@/assets/images/boss-lady-portrait.png";
+import bossPortraitImage from "@/assets/images/boss-portrait.png";
 import craftsmanshipDoorImage from "@/assets/images/craftsmanship-door.jpg";
 import contactMapImage from "@/assets/images/contact-map.png";
 import entryDoorImage from "@/assets/images/entry-door.jpg";
@@ -116,8 +118,29 @@ export const IMAGE_ASSETS = {
   trendBlackGlassSliding: trendBlackGlassSlidingDoorImage,
   trendFlutedBathroom: trendFlutedGlassBathroomDoorImage,
   trendHiddenFlush: trendHiddenFlushDoorImage,
-  trendSmartEntry: trendSmartEntryDoorImage
+  trendSmartEntry: trendSmartEntryDoorImage,
+  bossPortrait: bossPortraitImage,
+  bossLadyPortrait: bossLadyPortraitImage
 };
+
+export const OWNER_PROFILES = [
+  {
+    role: "主理人 / 老板",
+    name: "益嘉门业负责人",
+    phone: "13387981151",
+    phoneHref: "tel:13387981151",
+    image: IMAGE_ASSETS.bossPortrait,
+    description: "负责门店产品选型、测量安装和售后跟进，把每一扇门落到真实空间里。"
+  },
+  {
+    role: "门店顾问 / 老板娘",
+    name: "益嘉门业顾问",
+    phone: "13387988068",
+    phoneHref: "tel:13387988068",
+    image: IMAGE_ASSETS.bossLadyPortrait,
+    description: "负责客户沟通、风格搭配和到店接待，让选门过程更清楚、更省心。"
+  }
+];
 
 export const PRODUCTS = [
   {

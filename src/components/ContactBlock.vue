@@ -3,33 +3,22 @@ import { ref } from "vue";
 import { Clock, MapPin, Phone } from "lucide-vue-next";
 import WechatIcon from "@/components/WechatIcon.vue";
 import { CONTACT_INFO } from "@/constants/site";
+import { copyTextToClipboard } from "@/utils/clipboard";
 
 const copiedWechat = ref(false);
+const copyFailed = ref(false);
+let copyTimer;
 
 const copyWechat = async () => {
-  copiedWechat.value = true;
+  window.clearTimeout(copyTimer);
 
-  try {
-    await navigator.clipboard.writeText(CONTACT_INFO.wechat);
-  } catch {
-    try {
-      const input = document.createElement("input");
-      input.value = CONTACT_INFO.wechat;
-      input.setAttribute("readonly", "");
-      input.style.position = "fixed";
-      input.style.opacity = "0";
-      document.body.appendChild(input);
-      input.focus();
-      input.select();
-      document.execCommand("copy");
-      document.body.removeChild(input);
-    } catch {
-      // The visible state still gives the user a clear copy cue.
-    }
-  }
+  const copied = await copyTextToClipboard(CONTACT_INFO.wechat);
+  copiedWechat.value = copied;
+  copyFailed.value = !copied;
 
-  window.setTimeout(() => {
+  copyTimer = window.setTimeout(() => {
     copiedWechat.value = false;
+    copyFailed.value = false;
   }, 1800);
 };
 
@@ -75,13 +64,13 @@ defineProps({
       <button
         class="contact-card contact-card--button"
         type="button"
-        @pointerdown="copyWechat"
+        @click="copyWechat"
       >
         <span class="contact-icon">
           <WechatIcon :size="22" />
         </span>
         <span>
-          <small>{{ copiedWechat ? "已复制微信号" : "微信咨询" }}</small>
+          <small>{{ copiedWechat ? "已复制微信号" : copyFailed ? "请长按复制" : "微信咨询" }}</small>
           <strong>{{ CONTACT_INFO.wechat }}</strong>
         </span>
       </button>

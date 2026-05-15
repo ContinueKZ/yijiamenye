@@ -5,33 +5,22 @@ import ContactBlock from "@/components/ContactBlock.vue";
 import OwnerProfiles from "@/components/OwnerProfiles.vue";
 import WechatIcon from "@/components/WechatIcon.vue";
 import { CONTACT_INFO, IMAGE_ASSETS } from "@/constants/site";
+import { copyTextToClipboard } from "@/utils/clipboard";
 
 const copiedWechat = ref(false);
+const copyFailed = ref(false);
+let copyTimer;
 
 const copyWechat = async () => {
-  copiedWechat.value = true;
+  window.clearTimeout(copyTimer);
 
-  try {
-    await navigator.clipboard.writeText(CONTACT_INFO.wechat);
-  } catch {
-    try {
-      const input = document.createElement("input");
-      input.value = CONTACT_INFO.wechat;
-      input.setAttribute("readonly", "");
-      input.style.position = "fixed";
-      input.style.opacity = "0";
-      document.body.appendChild(input);
-      input.focus();
-      input.select();
-      document.execCommand("copy");
-      document.body.removeChild(input);
-    } catch {
-      // The visible state still gives the user a clear copy cue.
-    }
-  }
+  const copied = await copyTextToClipboard(CONTACT_INFO.wechat);
+  copiedWechat.value = copied;
+  copyFailed.value = !copied;
 
-  window.setTimeout(() => {
+  copyTimer = window.setTimeout(() => {
     copiedWechat.value = false;
+    copyFailed.value = false;
   }, 1800);
 };
 </script>
@@ -78,11 +67,19 @@ const copyWechat = async () => {
         </article>
       </div>
 
-      <button class="wechat-panel wechat-panel--button" type="button" @pointerdown="copyWechat">
+      <button class="wechat-panel wechat-panel--button" type="button" @click="copyWechat">
         <div>
           <WechatIcon :size="28" />
           <h2>微信咨询</h2>
-          <p>{{ copiedWechat ? "微信号已复制" : `微信号：${CONTACT_INFO.wechat}` }}</p>
+          <p>
+            {{
+              copiedWechat
+                ? "微信号已复制"
+                : copyFailed
+                  ? `请长按复制：${CONTACT_INFO.wechat}`
+                  : `微信号：${CONTACT_INFO.wechat}`
+            }}
+          </p>
         </div>
         <div class="qr-placeholder" aria-label="益嘉门业微信二维码">
           <img :src="IMAGE_ASSETS.wechatQr" alt="益嘉门业微信二维码" loading="lazy" />

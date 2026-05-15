@@ -150,7 +150,7 @@ export const PRODUCTS = [
     name: "原木极简平板门",
     categoryIds: ["bedroom-door"],
     categoryLabel: "房门 / 卧室门",
-    images: [IMAGE_ASSETS.trendOakBedroom, IMAGE_ASSETS.bedroom, IMAGE_ASSETS.craftsmanship],
+    images: [IMAGE_ASSETS.trendOakBedroom, IMAGE_ASSETS.hero, IMAGE_ASSETS.craftsmanship],
     summary: "自然木色、平板造型和黑色细把手，是当下年轻家庭偏爱的耐看型卧室门。",
     description:
       "顺应原木风、现代简约和整屋统一的装修趋势，以清爽木纹弱化装饰感，适合卧室、书房和儿童房等日常高频空间。",
@@ -166,7 +166,7 @@ export const PRODUCTS = [
     name: "奶油白静音门",
     categoryIds: ["bedroom-door"],
     categoryLabel: "房门 / 卧室门",
-    images: [IMAGE_ASSETS.trendWarmWhite, IMAGE_ASSETS.whiteDoor, IMAGE_ASSETS.craftsmanship],
+    images: [IMAGE_ASSETS.trendWarmWhite, IMAGE_ASSETS.whiteDoor, IMAGE_ASSETS.trendHiddenFlush],
     summary: "暖白饰面搭配轻法式线条，适合奶油风、现代轻奢和明亮型家装。",
     description:
       "暖白门款近年在家装中接受度高，能让空间更明亮柔和；搭配金属把手和细腻线条，兼顾质感与日常耐看。",
@@ -182,7 +182,7 @@ export const PRODUCTS = [
     name: "黑框极窄玻璃推拉门",
     categoryIds: ["kitchen-door", "sliding-door"],
     categoryLabel: "厨房门 / 推拉门",
-    images: [IMAGE_ASSETS.trendBlackGlassSliding, IMAGE_ASSETS.sliding, IMAGE_ASSETS.partition],
+    images: [IMAGE_ASSETS.trendBlackGlassSliding, IMAGE_ASSETS.sliding, IMAGE_ASSETS.trackless],
     summary: "黑色极窄边框和通透玻璃，是厨房、餐厅隔断里很受欢迎的现代款式。",
     description:
       "玻璃推拉门兼顾采光和油烟隔离，黑色窄边框视觉利落，适合开放式厨房、餐厨连接和小户型空间。",
@@ -198,7 +198,7 @@ export const PRODUCTS = [
     name: "长虹玻璃卫浴门",
     categoryIds: ["bathroom-door", "partition-door"],
     categoryLabel: "卫生间门 / 隔断门",
-    images: [IMAGE_ASSETS.trendFlutedBathroom, IMAGE_ASSETS.partition, IMAGE_ASSETS.trackless],
+    images: [IMAGE_ASSETS.trendFlutedBathroom, IMAGE_ASSETS.partition],
     summary: "竖纹长虹玻璃既保留采光，又兼顾私密感，是卫浴和干湿分离的热门选择。",
     description:
       "长虹玻璃利用竖向纹理弱化视线穿透，让小空间更通透。香槟或暖灰边框能提升质感，适合卫生间、干区和玄关隔断。",
@@ -214,7 +214,7 @@ export const PRODUCTS = [
     name: "门墙一体隐形门",
     categoryIds: ["hidden-door", "bedroom-door"],
     categoryLabel: "隐形门 / 门墙柜一体",
-    images: [IMAGE_ASSETS.trendHiddenFlush, IMAGE_ASSETS.craftsmanship, IMAGE_ASSETS.showroom],
+    images: [IMAGE_ASSETS.trendHiddenFlush, IMAGE_ASSETS.showroom],
     summary: "让门和墙面融为一体，适合追求极简、整装和空间完整感的家庭。",
     description:
       "隐形门和门墙柜一体化是高定整装里的热门方向，能够弱化门洞存在感，保持背景墙、走廊和客厅立面的完整统一。",
@@ -230,7 +230,7 @@ export const PRODUCTS = [
     name: "智能装甲入户门",
     categoryIds: ["entry-door"],
     categoryLabel: "入户门 / 安全门",
-    images: [IMAGE_ASSETS.trendSmartEntry, IMAGE_ASSETS.entry, IMAGE_ASSETS.showroom],
+    images: [IMAGE_ASSETS.trendSmartEntry, IMAGE_ASSETS.entry],
     summary: "装甲门体搭配智能锁，兼顾安全感、入户质感和现代家庭的便利需求。",
     description:
       "智能锁、稳定门体和深色金属质感是改善型住宅入户门的常见选择，适合重视安全、防护和第一眼质感的家庭。",
@@ -246,7 +246,7 @@ export const PRODUCTS = [
     name: "现代极简实木门",
     categoryIds: ["bedroom-door"],
     categoryLabel: "房门 / 卧室门",
-    images: [IMAGE_ASSETS.bedroom, IMAGE_ASSETS.whiteDoor, IMAGE_ASSETS.craftsmanship],
+    images: [IMAGE_ASSETS.hero, IMAGE_ASSETS.trendOakBedroom, IMAGE_ASSETS.craftsmanship],
     summary: "意式极简设计，原木质感与现代工艺融合，适合卧室、书房等安静空间。",
     description:
       "精选稳定木作结构，搭配克制线条与细腻饰面，让门体融入现代家装空间。适合追求静音、耐看和整屋统一感的家庭。",
@@ -262,7 +262,7 @@ export const PRODUCTS = [
     name: "雅致白系列静音门",
     categoryIds: ["bedroom-door"],
     categoryLabel: "房门 / 卧室门",
-    images: [IMAGE_ASSETS.whiteDoor, IMAGE_ASSETS.bedroom, IMAGE_ASSETS.craftsmanship],
+    images: [IMAGE_ASSETS.whiteDoor, IMAGE_ASSETS.trendWarmWhite, IMAGE_ASSETS.trendHiddenFlush],
     summary: "清爽白色饰面搭配静音结构，为卧室空间带来安静、干净的视觉感受。",
     description:
       "以浅色饰面和简洁线条为核心，适配现代、奶油、轻法式等家装风格。适合希望空间更明亮、更安静的用户。",
@@ -278,7 +278,7 @@ export const PRODUCTS = [
     name: "幻影黑窄边框玻璃门",
     categoryIds: ["kitchen-door", "sliding-door"],
     categoryLabel: "厨房门 / 推拉门",
-    images: [IMAGE_ASSETS.sliding, IMAGE_ASSETS.partition, IMAGE_ASSETS.trackless],
+    images: [IMAGE_ASSETS.sliding, IMAGE_ASSETS.trendBlackGlassSliding, IMAGE_ASSETS.trackless],
     summary: "极窄黑色边框搭配通透玻璃，适合厨房与餐厅之间的采光隔断。",
     description:
       "通过极窄边框和玻璃材质保留空间通透感，同时帮助厨房区域形成清晰边界。适合现代、极简、轻奢等空间。",
@@ -294,7 +294,7 @@ export const PRODUCTS = [
     name: "无轨极简推拉门",
     categoryIds: ["trackless-sliding-door", "sliding-door"],
     categoryLabel: "无轨推拉门",
-    images: [IMAGE_ASSETS.trackless, IMAGE_ASSETS.sliding, IMAGE_ASSETS.partition],
+    images: [IMAGE_ASSETS.trackless, IMAGE_ASSETS.sliding, IMAGE_ASSETS.trendBlackGlassSliding],
     summary: "地面无轨设计，视觉更完整，适合对清洁和极简感要求更高的空间。",
     description:
       "隐藏式轨道让地面保持干净完整，减少清洁死角。适合客餐厅、阳台、厨房等需要高频通行的空间。",
@@ -310,7 +310,7 @@ export const PRODUCTS = [
     name: "装甲安全入户门",
     categoryIds: ["entry-door"],
     categoryLabel: "入户门 / 安全门",
-    images: [IMAGE_ASSETS.entry, IMAGE_ASSETS.showroom, IMAGE_ASSETS.craftsmanship],
+    images: [IMAGE_ASSETS.entry, IMAGE_ASSETS.trendSmartEntry],
     summary: "强调安全性能和入户质感，为家庭第一道空间界面提供稳定守护。",
     description:
       "厚重结构结合现代饰面，让安全门不只可靠，也能成为入户空间的视觉重点。适合住宅、别墅及改善型装修。",
@@ -326,7 +326,7 @@ export const PRODUCTS = [
     name: "极简长虹玻璃隔断",
     categoryIds: ["partition-door", "bathroom-door"],
     categoryLabel: "阳台门 / 隔断门",
-    images: [IMAGE_ASSETS.partition, IMAGE_ASSETS.sliding, IMAGE_ASSETS.trackless],
+    images: [IMAGE_ASSETS.partition, IMAGE_ASSETS.trendFlutedBathroom],
     summary: "长虹玻璃带来朦胧光影，适合需要采光与私密兼顾的隔断空间。",
     description:
       "通过竖向纹理玻璃弱化视线穿透，同时保留自然光。适合卫生间干区、玄关、阳台和功能隔断。",

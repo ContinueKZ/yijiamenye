@@ -49,6 +49,9 @@ import { CONTACT_INFO, NAV_ITEMS, SITE_INFO } from "@/constants/site";
     </div>
     <div class="container footer-bottom">
       <span>© 2026 {{ SITE_INFO.name }} {{ SITE_INFO.englishName }}. All Rights Reserved.</span>
+      <a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer">
+        粤ICP备2026062700号
+      </a>
     </div>
   </footer>
 </template>

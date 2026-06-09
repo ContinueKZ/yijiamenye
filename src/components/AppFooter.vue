@@ -1,5 +1,6 @@
 <script setup>
 import { MapPin, Phone } from "lucide-vue-next";
+import beianPoliceIcon from "@/assets/images/beian-police.png";
 import WechatIcon from "@/components/WechatIcon.vue";
 import { CONTACT_INFO, NAV_ITEMS, SITE_INFO } from "@/constants/site";
 </script>
@@ -49,9 +50,21 @@ import { CONTACT_INFO, NAV_ITEMS, SITE_INFO } from "@/constants/site";
     </div>
     <div class="container footer-bottom">
       <span>© 2026 {{ SITE_INFO.name }} {{ SITE_INFO.englishName }}. All Rights Reserved.</span>
-      <a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer">
-        粤ICP备2026062700号
-      </a>
+      <div class="footer-records">
+        <a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer">
+          粤ICP备2026062700号
+        </a>
+        <a
+          class="footer-police-record"
+          href="https://beian.mps.gov.cn/#/query/webSearch?code=44030002013369"
+          rel="noreferrer"
+          target="_blank"
+        >
+          <img class="footer-police-icon" :src="beianPoliceIcon" alt="" aria-hidden="true" />
+          粤公网安备44030002013369号
+        </a>
+      </div>
     </div>
   </footer>
 </template>
+

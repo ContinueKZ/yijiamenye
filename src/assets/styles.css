@@ -208,13 +208,14 @@ img {
   height: 38px;
   display: grid;
   place-items: center;
-  background: var(--color-primary);
-  color: #fff;
+  overflow: hidden;
+  background: transparent;
 }
 
-.brand-mark svg {
-  width: 26px;
-  height: 26px;
+.brand-mark img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .brand strong,
@@ -1102,6 +1103,11 @@ img {
   align-items: start;
 }
 
+.story-grid .section-heading {
+  max-width: none;
+  margin-bottom: 0;
+}
+
 .story-list {
   display: grid;
   gap: var(--space-lg);
@@ -1535,6 +1541,29 @@ img {
   font-size: 12px;
 }
 
+.footer-records {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 8px 16px;
+}
+
+.footer-records a,
+.footer-police-record {
+  display: inline-flex;
+  align-items: center;
+}
+
+.footer-police-record {
+  gap: 4px;
+}
+
+.footer-police-icon {
+  width: 16px;
+  height: auto;
+  flex: 0 0 auto;
+}
+
 @media (max-width: 1024px) {
   .container {
     width: min(100% - var(--container-padding-tablet) * 2, var(--container-max));
@@ -1575,6 +1604,50 @@ img {
 
   .detail-info {
     position: static;
+  }
+
+  .story-grid {
+    gap: var(--space-lg);
+  }
+
+  .story-grid .section-heading h2 {
+    max-width: 760px;
+    font-size: clamp(30px, 5vw, 42px);
+  }
+
+  .story-grid .section-heading p:not(.eyebrow) {
+    max-width: 760px;
+  }
+
+  .story-list {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: var(--space-md);
+  }
+
+  .story-list article {
+    min-height: 100%;
+    grid-template-columns: 1fr;
+    align-content: start;
+    gap: var(--space-md);
+    border: 1px solid var(--color-border);
+    background: var(--color-surface);
+    padding: var(--space-md);
+  }
+
+  .story-list span {
+    width: 48px;
+    height: 48px;
+    font-size: 18px;
+  }
+
+  .story-list h3 {
+    margin-bottom: 8px;
+    font-size: 18px;
+  }
+
+  .story-list p {
+    font-size: 14px;
+    line-height: 1.75;
   }
 
   .product-card--horizontal {
@@ -1701,14 +1774,21 @@ img {
     text-align: left;
   }
 
-  .story-list article {
+  .story-list {
     grid-template-columns: 1fr;
-    gap: var(--space-md);
+  }
+
+  .story-list article {
+    min-height: 0;
   }
 
   .footer-bottom {
     align-items: flex-start;
     flex-direction: column;
+  }
+
+  .footer-records {
+    justify-content: flex-start;
   }
 
   .home-showcase-section {

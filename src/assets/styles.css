@@ -1116,12 +1116,15 @@ img {
 .story-list article {
   display: grid;
   grid-template-columns: 72px minmax(0, 1fr);
-  gap: var(--space-lg);
+  column-gap: var(--space-lg);
+  row-gap: var(--space-xs);
+  align-items: start;
   border-bottom: 1px solid var(--color-border);
   padding-bottom: var(--space-lg);
 }
 
 .story-list span {
+  grid-row: 1 / span 2;
   width: 64px;
   height: 64px;
   display: grid;
@@ -1135,6 +1138,10 @@ img {
 .story-list h3 {
   margin: 0 0 var(--space-sm);
   font-size: 22px;
+}
+
+.story-list article p {
+  grid-column: 2;
 }
 
 .story-list p,
@@ -1635,9 +1642,14 @@ img {
   }
 
   .story-list span {
+    grid-row: auto;
     width: 48px;
     height: 48px;
     font-size: 18px;
+  }
+
+  .story-list article p {
+    grid-column: auto;
   }
 
   .story-list h3 {
